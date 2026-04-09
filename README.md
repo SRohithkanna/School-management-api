@@ -38,6 +38,9 @@ Use Postman collection provided in the repository.
 
 ---
 
+## Deployement 
+I have deployed the backend and MySQl with the help of render and aiven
+
 ## 🚀 Setup Instructions
 
 1. Clone the repository
