@@ -8,16 +8,13 @@
   },
   "item": [
     {
-      "name": "Add school",
+      "name": "Add school (Live link)",
       "request": {
-        "auth": {
-          "type": "noauth"
-        },
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"XYZ school\",\r\n    \"address\":\"chennai\",\r\n    \"latitude\":10.00,\r\n    \"longitude\":10.00\r\n\r\n}",
+          "raw": "{\r\n    \r\n  \"name\":      \"trial\",\r\n  \"address\":   \"lucknow\",\r\n  \"latitude\":  18.00,\r\n  \"longitude\": 18.00\r\n\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -25,12 +22,13 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/addSchool",
-          "protocol": "http",
+          "raw": "https://school-management-api-w4w6.onrender.com/addSchool",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "school-management-api-w4w6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "addSchool"
           ]
@@ -39,32 +37,18 @@
       "response": []
     },
     {
-      "name": "List Schools",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
+      "name": "List schools (Live link)",
       "request": {
-        "auth": {
-          "type": "noauth"
-        },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "http://localhost:3000/listschools?latitude=13.00&longitude=13.00",
-          "protocol": "http",
+          "raw": "https://school-management-api-w4w6.onrender.com/listschools?latitude=13.00&longitude=13.00",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "school-management-api-w4w6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "listschools"
           ],
