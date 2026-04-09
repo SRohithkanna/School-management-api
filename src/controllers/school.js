@@ -5,7 +5,7 @@ const getDistance = require("../utils/distance");
 exports.addSchool = async (req, res, next) => {
   try {
     const { name, address, latitude, longitude } = req.body;
-
+    
     // Validation
     if (!name || !address || latitude === undefined || longitude === undefined) {
       return res.status(400).json({

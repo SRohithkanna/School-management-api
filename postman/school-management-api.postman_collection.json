@@ -1,0 +1,86 @@
+{
+  "info": {
+    "_postman_id": "4bfaba17-9280-4bc1-a06f-1dcf4c504c42",
+    "name": "school-management-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49878897",
+    "_collection_link": "https://go.postman.co/collection/49878897-4bfaba17-9280-4bc1-a06f-1dcf4c504c42?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Add school",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"XYZ school\",\r\n    \"address\":\"chennai\",\r\n    \"latitude\":10.00,\r\n    \"longitude\":10.00\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/addSchool",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "addSchool"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Schools",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/listschools?latitude=13.00&longitude=13.00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "listschools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "13.00"
+            },
+            {
+              "key": "longitude",
+              "value": "13.00"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

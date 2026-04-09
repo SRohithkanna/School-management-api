@@ -14,9 +14,9 @@ router.get("/test", (req, res) => {
 });
 
 //add school route
-router.post("/addSchool", addSchool);
+router.post("/addSchool",addSchool);
 
 //list school route
-router.get("/listSchools", listSchools);
+router.get("/listSchools",listSchools);
 
 module.exports = router;
