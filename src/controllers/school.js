@@ -1,4 +1,5 @@
 const db = require("../db");
+const getDistance = require("../utils/distance");
 
 // POST /addSchool
 exports.addSchool = async (req, res, next) => {
@@ -30,6 +31,39 @@ exports.addSchool = async (req, res, next) => {
       success: true,
       message: "School added successfully",
       id: result.insertId
+    });
+
+  } catch (err) {
+    next(err);
+  }
+};
+
+// GET /listSchools
+exports.listSchools = async (req, res, next) => {
+  try {
+    const { latitude, longitude } = req.query;
+
+    if (!latitude || !longitude) {
+      return res.status(400).json({
+        message: "Latitude and longitude required"
+      });
+    }
+
+    const userLat = parseFloat(latitude);
+    const userLon = parseFloat(longitude);
+
+    const [schools] = await db.execute("SELECT * FROM schools");
+
+    const result = schools
+      .map(s => ({
+        ...s,
+        distance: getDistance(userLat, userLon, s.latitude, s.longitude)
+      }))
+      .sort((a, b) => a.distance - b.distance);
+
+    res.json({
+      success: true,
+      data: result
     });
 
   } catch (err) {
